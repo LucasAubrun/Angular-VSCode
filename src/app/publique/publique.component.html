@@ -1,0 +1,32 @@
+<p> {{ nom }}</p>
+<div>
+    <div class="row mx-1">
+        <div class="col-sm-4" *ngFor="let m of memos">
+            <div class="card py-3">
+                <p class="mx-auto my-auto"> {{m.content}} </p>
+                <p class="mx-auto my-auto"> {{m.date | date: "dd/MM/yyyy"}} </p>
+                    <p class="mx-auto my-auto" *ngIf="m.reader != null"> {{m.reader.login}} {{m.reader.password}} </p>
+                    <p class="mx-auto my-auto" *ngIf="m.reader === null"> Mémo public </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Contenu</th>
+                <th>Date</th>
+                <th>Destinataire</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of memos">
+                <td>{{m.content}}</td>
+                <td>{{m.date | date:"dd/MM/yyyy"}}</td>
+                <td *ngIf="m.reader != null">{{m.reader.login}}</td>
+                <td *ngIf="m.reader == null"> Public </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

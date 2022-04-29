@@ -1,0 +1,5 @@
+<!-- Le name doit être le même que celui dans l'API Eclipse !! -->
+<form #memoForm="ngForm" (ngSubmit)="createMemo(memoForm.value)">
+<input type="text" name="content" ngModel="">
+<button class="btn btn-primary">Send Memo</button>
+</form>

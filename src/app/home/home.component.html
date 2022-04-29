@@ -1,0 +1,21 @@
+<p>home works!</p>
+<div>
+    <div class="row mx-1">
+        <div class="col-sm-4" *ngFor="let m of memo6">
+            <div class="card py-3">
+                <!-- Il faut utiliser un attribut de la classe memos -->
+                <p class="mx-auto my-auto"> {{m.content}} </p>
+                <p class="mx-auto my-auto"> {{m.date | date: "dd/MM/yyyy"}} </p>
+                <p class="mx-auto my-auto" ng-if="m.reader != null"> {{m.reader.login}} {{m.reader.password}} </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="text-center mt-4">
+    <div class="example-button-row">
+        <button mat-raised-button color="warn" (click)="openDialog()">Send a memo !</button>
+    </div>
+</section>
